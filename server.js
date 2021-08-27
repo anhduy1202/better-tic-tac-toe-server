@@ -7,11 +7,11 @@ const {getUserList, get_Current_User, user_Disconnect, join_User, playByTurn } =
 const app = express();
 app.use(cors());
 const server = http.createServer(app);
-const io = socketio(server, {
-     cors: {
-    origin: "*",
-    methods: ["GET", "POST"]
-  }
+const io = require("socket.io")(httpServer, {
+     cors:
+     origin: "http://localhost:8080",
+     methods: ["GET","POST"]
+                                }
 });
 const PORT = process.env.PORT || 8000;
 
