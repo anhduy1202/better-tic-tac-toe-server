@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 const server = http.createServer(app);
 const io = socketio(server);
-// const PORT = 8000 || process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 
 
@@ -72,4 +72,4 @@ io.on('connection', socket => {
 
 });
 
-server.listen(process.env.PORT || 8000, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
