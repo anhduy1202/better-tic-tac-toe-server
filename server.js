@@ -8,11 +8,10 @@ const app = express();
 app.use(cors());
 const server = http.createServer(app);
 const io = socketio(server, {
-    cors: {
-        origin: "*",
-    },
-    transport: ["polling"],
-    maxHttpBufferSize:8e6,
+     cors: {
+    origin: "https://example.com",
+    methods: ["GET", "POST"]
+  }
 });
 const PORT = process.env.PORT || 8000;
 
