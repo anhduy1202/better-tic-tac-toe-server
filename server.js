@@ -9,8 +9,10 @@ app.use(cors());
 const server = http.createServer(app);
 const io = socketio(server, {
     cors: {
-        origin: "http://localhost:3000"
-    }
+        origin: "*",
+    },
+    transport: ["polling"],
+    maxHttpBufferSize:8e6,
 });
 const PORT = process.env.PORT || 8000;
 
